@@ -1,0 +1,32 @@
+﻿/*  Сброс умолчаний
+* {  all: unset; }
+*/
+body {
+	min-width: 960px;
+	padding: 10px 30px;
+
+	font-family: 'PT Sans Narrow', Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 24px;
+	font-weight: 700;
+	color: white;
+
+	background-color: #221;
+}
+
+a {
+	color: white;
+}
+
+main:not(.main-page) {
+	color: black;
+	background-color: #eee;
+}
+
+main:not(.main-page) a {
+	color: black;
+}
+
+section, article, header, footer {
+	margin-bottom: 20px;
+}
