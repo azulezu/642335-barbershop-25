@@ -1,22 +1,7 @@
-﻿/*  Сброс умолчаний
+/*  Сброс умолчаний
 * {  all: unset; }
 */
 /*
-@font-face {
-  font-family: 'PT Sans Narrow';
-  src: url("../fonts/ptsansnarrow.woff2") format('woff2'),
-       url("../ptsansnarrow.woff") format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'PT Sans Narrow';
-  src: url("../fonts/ptsansnarrowbold.woff2") format('woff2'),
-       url("../ptsansnarrowbold.woff") format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
 
 body {
 	min-width: 960px;
@@ -45,27 +30,88 @@ main:not(.main-page) a {
 	color: black;
 }
 
-section, article, header, footer {
-	margin-bottom: 20px;
+*/
+/* ============================= */
+/*           Подсветка           */
+/* ============================= */
+/*
+div::before,
+ul::before,
+nav::before,
+section::before,
+article::before,
+header::before,
+footer::before {
+  content: attr(class);
+  color: yellow;
+  font-size: 0.5rem;
+  line-height: 1.1;
+  position: absolute;
+  background-color: black;
+  padding: 2px;
+}
+
+nav,
+section,
+article,
+header,
+footer {
+  outline: 1px dotted darkturquoise;
+}
+
+div,
+ul {
+  outline: 1px dotted royalblue;
+}
+
+body > * {
+  background-color: rgba(0, 255, 255, 0.1) !important;
+}
+
+body > * > * {
+  background-color: rgba(255, 255, 0, 0.1) !important;
+}
+
+body > * > * > * {
+  background-color: rgba(0, 0, 255, 0.1) !important;
+}
+
+body > * > * > * > * {
+  background-color: rgba(255, 0, 255, 0.1) !important;
 }
 */
 /* ============================= */
+@font-face {
+  font-style: normal;
+  font-weight: normal;
+  font-family: "PT Sans Narrow";
+
+  src: url("../fonts/ptsansnarrow.woff2") format("woff2"),
+  url("../ptsansnarrow.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: bold;
+  font-family: "PT Sans Narrow";
+
+  src: url("../fonts/ptsansnarrowbold.woff2") format("woff2"),
+  url("../ptsansnarrowbold.woff") format("woff");
+}
 
 body {
   margin: 0;
   padding: 0;
-
-  font-family: "PT Sans Narrow", Arial, sans-serif;
+  font-weight: 700;
   font-size: 14px;
   line-height: 24px;
-  font-weight: 700;
+  font-family: "PT Sans Narrow", "Arial", sans-serif;
   color: #ffffff;
   text-transform: uppercase;
-
   background-color: #000000;
   background-image: url("../img/bg-main.jpg");
-  background-position: top center;
   background-repeat: no-repeat;
+  background-position: top center;
 }
 
 a {
@@ -73,21 +119,21 @@ a {
 }
 
 .main-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
-
   background-color: #000000;
 }
 
 .button {
   font: inherit;
-
+  vertical-align: middle;
   text-align: center;
   color: #ffffff;
-  vertical-align: middle;
   text-transform: uppercase;
-
   background-color: #000000;
   border: none;
 }
@@ -115,11 +161,20 @@ a {
   background-color: #242424;
 }
 
+.features {
+  margin-bottom: 80px;
+}
+
 .features-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 .feature-item {
+  width: 300px;
   text-align: center;
 }
 
@@ -129,12 +184,15 @@ a {
 }
 
 .index-columns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+  padding: 50px 80px;
   color: #000000;
-
   background-color: #f8f5f2;
   background-image: url("img/pattern-light.jpg");
-  background-position: 0 0;
   background-repeat: repeat;
+  background-position: 0 0;
 }
 
 .index-columns h2 {
@@ -157,7 +215,6 @@ a {
 
 .appointment-item input {
   font: inherit;
-
   background-color: transparent;
   border: 2px solid #000000;
 }
@@ -167,15 +224,23 @@ a {
 }
 
 .main-footer {
+  margin-top: 65px;
+  padding: 60px 0;
   color: #ffffff;
-
   background-color: #212121;
   background-image: url("img/pattern-dark.jpg");
-  background-position: 0 0;
   background-repeat: repeat;
+  background-position: 0 0;
+}
+
+.main-footer .container {
+  display: flex;
 }
 
 .footer-contacts a {
+  width: 320px;
+  margin: 0;
+  margin-right: 80px;
   color: #ffffff;
   text-decoration: underline;
 }
@@ -186,6 +251,7 @@ a {
 }
 
 .footer-social {
+  width: 145px;
   text-align: center;
 }
 
@@ -197,25 +263,25 @@ a {
   color: #ffffff;
 }
 
-
 .footer-copyright {
+  width: 150px;
+  margin: 0;
+  margin-left: auto;
   text-align: center;
 }
 
 .footer-copyright .button:hover,
 .footer-copyright .button:focus {
   color: #000000;
-
   background-color: #ffffff;
 }
 
 .modal {
   color: #000000;
-
   background-color: #f8f3f0;
   background-image: url("img/pattern-light.jpg");
-  background-position: 0 0;
   background-repeat: repeat;
+  background-position: 0 0;
 }
 
 .modal h2 {
@@ -228,7 +294,6 @@ a {
   font: inherit;
   color: #000000;
   text-transform: uppercase;
-
   background-color: #f9f6f3;
   border: 2px solid #000000;
 }
@@ -255,22 +320,26 @@ a {
 /* -------------------- */
 /*        catalog       */
 /* -------------------- */
-
 .inner-page {
   color: #000000;
-
   background-color: #f9f6f3;
   background-image: url("img/pattern-light.jpg");
-  background-position: 0 0;
   background-repeat: repeat;
+  background-position: 0 0;
 }
 
 .page-title {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
   font-size: 30px;
   line-height: 42px;
 }
 
 .breadcrumbs {
+  margin: 0;
+  margin-bottom: 50px;
+  padding: 0;
   list-style: none;
 }
 
@@ -285,6 +354,10 @@ a {
 
 .breadcrumbs-current {
   color: #aba9a7;
+}
+
+.filters {
+  width: 180px;
 }
 
 .filter fieldset {
@@ -308,21 +381,41 @@ a {
 
 .filter-input:disabled + label {
   color: #000000;
-
   opacity: 0.5;
 }
 
+.catalog-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.catalog {
+  width: 700px;
+}
+
 .catalog-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
   list-style: none;
 }
 
 .catalog-item {
+  width: 220px;
+  margin-right: 20px;
+  margin-bottom: 20px;
   background-color: #f8f8f8;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.catalog-item:nth-child(3n) {
+  margin-right: 0;
 }
 
 .catalog-item:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
 }
 
 .catalog-item a {
@@ -342,7 +435,6 @@ a {
   font-size: 14px;
   line-height: 20px;
   text-align: center;
-
   background-color: #e5e5e5;
 }
 
@@ -352,12 +444,13 @@ a {
 }
 
 .pagination-list {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 .pagination-item a {
   color: #ffffff;
-
   background-color: #000000;
 }
 
@@ -369,7 +462,6 @@ a {
 
 .pagination-item-current a {
   color: #000000;
-
   background-color: #ffffff;
 }
 
@@ -377,14 +469,12 @@ a {
 .pagination-item-current a:focus,
 .pagination-item-current a:active {
   color: #000000;
-
   background-color: #ffffff;
 }
 
 /* -------------------- */
 /*     catalog-item     */
 /* -------------------- */
-
 .product-photo-preview {
   list-style: none;
 }
@@ -397,7 +487,6 @@ a {
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
 }
 
-
 .product-article {
   text-align: right;
   color: #aeaeae;
@@ -406,7 +495,6 @@ a {
 .product-price b {
   line-height: 20px;
   text-align: center;
-
   background-color: #e5e5e5;
 }
 
@@ -417,4 +505,95 @@ a {
 
 .product-info ul {
   list-style: none;
+}
+
+/* ----- Сеточные стили ----- */
+.main-header-logo {
+  order: 2;
+  width: 368px;
+  height: 153px;
+}
+
+.site-navigation {
+  width: 620px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.user-navigation {
+  width: 140px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-navigation-wrapper {
+  width: 100%;
+  margin-bottom: 60px;
+  background-color: #000000;
+}
+
+.container {
+  width: 940px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.main-navigation-wrapper .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.news {
+  width: 380px;
+}
+
+.gallery {
+  width: 300px;
+}
+
+.contacts {
+  width: 380px;
+}
+
+.appointment {
+  width: 300px;
+}
+
+.product-photos {
+  width: 460px;
+}
+
+.product-info {
+  width: 390px;
+}
+
+.main-header {
+  margin-bottom: 75px;
+}
+
+.inner-page .main-header {
+  margin-bottom: 50px;
+  background-color: #000000;
+}
+
+.inner-page .main-header-logo {
+  order: 0;
+  width: 111px;
+  height: 24px;
+  padding: 23px 20px;
+}
+
+.inner-page .main-navigation {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.inner-page .user-navigation {
+  margin-left: auto;
+}
+
+.inner-page .main-footer {
+  margin-top: 45px;
 }
